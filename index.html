@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="id">
+  
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>JobSeekr - Temukan Karier Impianmu</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style.css"/>
+</head>
+
+<body>
+  <header>
+    <img src="logo.png">
+    <h1>Halo Theresia, Temukan Karier Impianmu</h1>
+    <p>Buat resume profesional, cari pekerjaan, dan kelola aplikasi Anda  semuanya dalam satu platform.</p>
+    <button type="button" class="btn-primary" onclick="bikinbutton"> mulai sekarang</button>
+    
+  </header>
+
+  <section class="steps">
+    <div class="step">
+      <i class="fas fa-file-alt"></i>
+      <h3>Buat Resume</h3>
+      <p>Gunakan pembuat resume kami yang modern untuk membuat dokumen profesional dalam hitungan menit.</p>
+    </div>
+    <div class="step">
+      <i class="fas fa-search"></i>
+      <h3>Cari Pekerjaan</h3>
+      <p>Telusuri ribuan lowongan kerja yang relevan dengan keahlian dan lokasi Anda.</p>
+    </div>
+    <div class="step">
+      <i class="fas fa-briefcase"></i>
+      <h3>Lamar dan Kelola</h3>
+      <p>Lacak lamaran Anda dan simpan pekerjaan favorit dengan mudah dalam dashboard pribadi Anda.</p>
+    </div>
+  </section>
+
+  <section class="reviews">
+    <h2>Testimoni Pengguna</h2>
+    <div class="review-list">
+      <div class="review">
+        <p>"JobSeekr membantu saya membuat resume yang profesional dan mudah diterima oleh perusahaan!"</p>
+        <h4>— Rina, Fresh Graduate</h4>
+      </div>
+      <div class="review">
+        <p>"Saya suka fitur pelacakan lamaran. Semua lowongan yang saya lamar bisa saya pantau dengan mudah."</p>
+        <h4>— Andre, Digital Marketer</h4>
+      </div>
+      <div class="review">
+        <p>"Prosesnya cepat dan antarmukanya mudah digunakan. Sangat cocok untuk profesional yang sibuk."</p>
+        <h4>— Sari, HR Specialist</h4>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <h2>Wujudkan Masa Depan Profesional Anda</h2>
+    <p>Bergabunglah dengan komunitas global pencari kerja dan buka peluang karier yang lebih luas hari ini.</p>
+    <button id="persen" class="btn-primary">Gabung Gratis</button>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 JobSeekr</p>
+  </footer>
+</body>
+</html>
+
+<script>
+// document.querySelector('.btn-primary').addEventListener('clik' , function() {//function callback
+ // alert("selamat datang di Jobseekr! silahkan daftar untuk mulai.");
+ //function
+//});
+  //const nama = prompt ("Masukan nama anda:");
+  //document.
+  //(header 1)
+  //document.getElementById
+
+  //const btn = document.querySelector('.btn-primary');
+  //btn.addEventListener('mouseover',() => {
+    //btn.innerText = 'Ayo Gabung!';
+  //});
+  //btn.addEventListener('mouseout', () => {
+    //btn.innerText = 'Gabung Gratis';
+  //});
+
+  //function bikinbutton()
+ // {
+   // const divBaru = document.createElement('div');
+    //divBaru.innerHTML = "<button class='btn-primary'>Klik disini!</button>";
+    //document.querySelector('.cta').append(divBaru);
+  //}
+
+  //const estDiv = document.createElement("div");
+  //estDiv.innerHTML = '<button class="btn-primay" id="cekPeluang">Cek</button><p id="hasilPeluang"></p>';
+  //document.querySelector(".cta").appendChild(estDiv);
+  //document.getElementById("cekPeluang").onclick = () => {
+    //const nilai = Math.floor(Math.random()* 51) + 50;
+    //document.getElementById("hasilPeluang").innerText = `Peluang Anda: ${nilai}%`;
+  //};
+  document.addEventListener("DOMContentLoaded", function () {
+  document.querySelector("#persen").addEventListener("click", function () {
+    const container = document.querySelector(".cta");
+
+    // Cegah duplikasi
+    if (document.getElementById("inputPekerjaan")) return;
+
+    // Teks estimasi
+    const judulEstimasi = document.createElement("h3");
+    judulEstimasi.innerText = "Estimasi Peluang Pekerjaan";
+    judulEstimasi.style.marginTop = "20px";
+
+    // Bungkus input & tombol
+    const formContainer = document.createElement("div");
+    formContainer.style.marginTop = "10px";
+
+    // Input Nama Pekerjaan
+    const inputPekerjaan = document.createElement("input");
+    inputPekerjaan.id = "inputPekerjaan";
+    inputPekerjaan.placeholder = "Nama Pekerjaan";
+  //  inputPekerjaan.style.margin = "10px";
+    //inputPekerjaan.style.padding = "10px";
+    //inputPekerjaan.style.width = "250px";
+
+    // Input Tahun
+    const inputTahun = document.createElement("input");
+    inputTahun.type = "number";
+    inputTahun.id = "inputTahun";
+    inputTahun.placeholder = "Tahun";
+   // inputTahun.style.margin = "10px";
+    //inputTahun.style.padding = "10px";
+    //inputTahun.style.width = "120px";
+
+    // Tombol Cek
+    const btnCek = document.createElement("Input");
+	btnCek.type ="button";
+	btnCek.value="Cek";
+   // btnCek.innerText = "Cek";
+    //btnCek.className = "btn-primary";
+    //btnCek.style.margin = "10px";
+
+      // Hasil
+    const hasil = document.createElement("p");
+    hasil.id = "hasilPeluang";
+    hasil.style.marginTop = "10px";
+    
+
+    // Tambahkan ke formContainer
+    formContainer.appendChild(inputPekerjaan);
+    formContainer.appendChild(inputTahun);
+    formContainer.appendChild(btnCek);
+    formContainer.appendChild(hasil);
+
+    // Tambahkan ke .cta
+    container.appendChild(judulEstimasi);
+    container.appendChild(formContainer);
+
+    // Aksi saat tombol Cek diklik
+    btnCek.addEventListener("click", function () {
+      const pekerjaan = inputPekerjaan.value.trim();
+      const tahun = inputTahun.value.trim();
+
+       if (!pekerjaan || !tahun) {
+        alert("Harap isi semua kolom!");
+        return;
+      }
+
+      const peluang = Math.floor(Math.random() * 70) + 30;
+      hasil.innerText = `Peluang Anda menjadi ${pekerjaan} adalah: ${peluang}%`;
+    });
+  });
+});
+
+
+
+
+
+</script>
